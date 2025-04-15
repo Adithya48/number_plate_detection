@@ -1,6 +1,6 @@
 # 🚘 Number Plate Detection
 
-This project aims to detect and extract vehicle number plates from images using image processing and machine learning techniques. It can be used for traffic monitoring, automated toll systems, and vehicle verification systems.
+This project aims to detect and extract vehicle number plates from images using image processing techniques. It can be used for traffic monitoring, automated toll systems, and vehicle verification systems.
 
 ---
 
