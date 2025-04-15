@@ -15,4 +15,11 @@ This project aims to detect and extract vehicle number plates from images using 
 
 ## 📁 Folder Structure
 
-number_plate_detection/ ├── detect_plate.py # Main detection script ├── utils.py # Helper functions ├── images/ # Input images ├── results/ # Output images with detected plates ├── model/ (optional) # Pretrained model (if used) ├── requirements.txt # Required packages └── README.md # Project documentation
+number_plate_detection/ 
+├── detect_plate.py # Main detection script 
+├── utils.py # Helper functions 
+├── images/ # Input images
+├── results/ # Output images with detected plates
+├── model/ (optional) # Pretrained model (if used) 
+├── requirements.txt # Required packages 
+└── README.md # Project documentation
