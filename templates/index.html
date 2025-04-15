@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Number Plate Image</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron text-center mt-5 shadow p-4">
+            <h1 class="title">Number Plate Detection</h1>
+            <p class="subtitle">Upload an image of a number plate to detect the text.</p>
+            <hr class="separator">
+            <form id="uploadForm" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <input type="file" class="form-control-file" name="file" id="fileInput" required>
+                </div>
+                <div id="previewContainer" class="mb-3" style="display: none;">
+                    <img id="imagePreview" src="#" alt="Image Preview" class="img-fluid">
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg btn-upload">Upload</button>
+            </form>
+        </div>
+    </div>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById('fileInput').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('imagePreview').src = e.target.result;
+                    document.getElementById('previewContainer').style.display = 'block';
+                    document.getElementById('previewContainer').classList.add('fade-in');
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+</body>
+</html>
